@@ -12,3 +12,4 @@ deploy:
   file: bin/dbsync
   on:
     repo: allermedia/dbsync
+    all_branches: true
