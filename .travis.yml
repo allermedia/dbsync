@@ -1,0 +1,15 @@
+language: go
+go:
+  - tip
+install:
+  - export PATH=$PATH:$HOME/gopath/bin/
+  - go get -a -d ./...
+script:
+  - go build -o dbsync compress.go dump.go server.go
+deploy:
+  provider: releases
+  api_key:
+    secure: U+U3g/JRtclq2ZAfnRmhtnABJugMrl9VfGB+/8OOQYHuhckdtquP4mbahFO1AJ1xF0huRwRD29lyi9/jYwmCQbC9Spx2pVrLP0go1geLIqqkxcMbt4MlNMVfqLN+YjaPgbKKAhK9g1SeoRBlDFxIvIMKFgG4/VVPAAoZ40HLL0E=
+  file: dbsync
+  on:
+    repo: allermedia/dbsync
